@@ -33,20 +33,21 @@ section{
   background-color: white;
   box-shadow: 0 0 2px rgba(0,0,0,.12), 0 2px 4px rgba(0,0,0,.24);
 }
-.form input{
-  border-bottom: 1px solid #e0e0e0;
-}
-.form input:focus{
-  border-bottom: 2px solid #673ab7;
-}
 .form__title{
   width: 90%;
-  font-size: 45px;
-  border-bottom: 1px solid #e0e0e0;
-  margin: 20px 3% 20px 7%;
+  font-size: 35px;
+  margin: 0 3% 0 7%;
 }
 .form__description{
   width: 90%;
-  margin: 20px 3% 20px 7%;
-  border-bottom: 1px solid #e0e0e0;
+  font-size: 14px;
+  margin: 0 3% 0 7%;
+}
+.button__add-qyestion{
+  display: block;width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  position: fixed;
+  top: 50%;
+  right: 200px;
 }

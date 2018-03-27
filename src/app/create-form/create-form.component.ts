@@ -7,10 +7,15 @@ import {  FormGroup, FormControl, Validators }   from '@angular/forms';
   styleUrls: ['./create-form.component.css']
 })
 export class CreateFormComponent implements OnInit {
-
+  questions : any;
   createFormGroup : FormGroup;
 
   constructor() {
+    this.questions = [
+      {title: "new form",
+       type : "string",
+       answerVariables:[]}
+    ]
     this.createFormGroup = new FormGroup({
     "form-title": new FormControl("", [
       Validators.required,
@@ -26,5 +31,12 @@ export class CreateFormComponent implements OnInit {
 
   ngOnInit() {
   }
-
+  addQuestion(){
+    const question = {
+     title: "new form",
+     type : "string",
+     answerVariables:[]
+   }
+   this.questions.push(question)
+  }
 }

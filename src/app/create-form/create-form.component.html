@@ -8,11 +8,15 @@
 </header>
 <section>
   <form class="form" [formGroup]="createFormGroup" novalidate (ngSubmit)="createForm()">
-    <input type="text" formControlName="form-title"
-    class="form__title" name="title">
-    <input type="text" name="description"
-      formControlName="description" placeholder="description"
-      class="form__description">
-    <app-create-form-cell></app-create-form-cell>
+    <mat-form-field   class="form__title">
+      <input matInput type="text" formControlName="form-title" name="title"
+      value="New form">
+    </mat-form-field>
+  <mat-form-field class="form__description">
+    <input matInput type="text" name="description"
+    formControlName="description" placeholder="description">
+  </mat-form-field>
+    <app-create-form-cell *ngFor="let question of questions"></app-create-form-cell>
   </form>
+  <input  class="button__add-qyestion" type="button" value="+" (click)="addQuestion()"/>
 </section>

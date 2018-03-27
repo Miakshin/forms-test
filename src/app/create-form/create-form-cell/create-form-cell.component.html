@@ -2,17 +2,17 @@
   <input type="text" class="form-cell__input-title"
   [(ngModel)] ="title" value="Question title">
   <div class="form-cell-settings" >
-    <select class="" name=""  [(ngModel)]="type" >
-      <option value="string">
+    <mat-select [(ngModel)]="type" class="form-cell-settings__section">
+      <mat-option value="string" class="form-cell-settings__section">
         text(string)
-      </option>
-      <option value="paragraph">
+      </mat-option>
+      <mat-option value="paragraph" class="form-cell-settings__section">
         text(paragraph)
-      </option>
-      <option value="ddl">
+      </mat-option>
+      <mat-option value="ddl" class="form-cell-settings__section">
         drop-down list
-      </option>
-    </select>
+      </mat-option>
+    </mat-select>
   </div>
   <div class="form-cell-content">
     <p *ngIf="type=== 'string'" class="form-cell-content__short-answer">Short answer</p>

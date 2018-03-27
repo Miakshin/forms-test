@@ -4,6 +4,9 @@ import { FormsModule }   from '@angular/forms';
 import { ReactiveFormsModule }   from '@angular/forms';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { MatButtonModule } from '@angular/material';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatInputModule } from '@angular/material/input';
+import { MatSelectModule } from '@angular/material/select';
 
 
 import { AppComponent } from './app.component';
@@ -30,7 +33,10 @@ import { CreateFormCellComponent } from './create-form/create-form-cell/create-f
     FormsModule,
     ReactiveFormsModule,
     NoopAnimationsModule,
-    MatButtonModule
+    MatButtonModule,
+    MatToolbarModule,
+    MatInputModule,
+    MatSelectModule
   ],
   providers: [],
   bootstrap: [AppComponent]
