@@ -1,0 +1,28 @@
+<div class="form-cell">
+  <div class="form-cell-content">
+    <input type="text" name="form-cell-content__title" value="Question title">
+    <input *ngIf="type===string" type="text" />
+    <textarea *ngIf="type === paragraph" name="name" rows="8" cols="80"></textarea>
+    <div *ngIf="type === ddl" class="drop-down-items">
+      <input type="text" name="" value="">
+      <input type="button" name="" value="add">
+    </div>
+  </div>
+  <div class="form-cell__footer">
+    <input type="button" value="delete" />
+  </div>
+  <div class="form-cell-settings" >
+    <select class="" name="" (change)="onHendleType($event)">
+      <option value="string">
+        text(string)
+      </option>
+      <option value="paragraph">
+        text(paragraph)
+      </option>
+      <option value="ddl">
+        drop-down list
+      </option>
+    </select>
+
+  </div>
+</div>

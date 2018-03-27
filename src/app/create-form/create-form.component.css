@@ -1,0 +1,46 @@
+.create-header{
+  height: 184px;
+  width: 100%;
+  background-color:  #673ab7;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  color: white;
+}
+.create-header__title{
+  font-size: 24px;
+  font-weight: 400;
+  margin: 20px 0 20px 20px;
+}
+section{
+  min-height: 100vh;
+  background-color: #ede7f6;
+}
+.create-header__back{
+  color: white;
+  font-size: 34px;
+  margin: 20px;
+}
+.create-header__img-btn{
+  width: 32px;
+}
+.form{
+  min-width: 600px;
+  max-width: 900px;
+  margin: 0 auto;
+  position: relative;
+  bottom: 40px;
+  background-color: white;
+}
+.form__title{
+  width: 90%;
+  font-size: 45px;
+  border-bottom: 1px solid #e0e0e0;
+  margin: 20px 3% 20px 7%;
+}
+.form__description{
+  width: 90%;
+  margin-left: 7%;
+  margin-right: 3%;
+  border-bottom: 1px solid #e0e0e0;
+}

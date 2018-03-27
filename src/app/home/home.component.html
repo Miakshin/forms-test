@@ -1,18 +1,24 @@
 <header>
   <div class="header">
     <h1 class="header__title">Froms generator</h1>
-    <input type="search" name="serch" value="forms search">
+    <input type="search" name="serch" class="header__search" placeholder="forms search">
   </div>
 </header>
 <main>
   <div class="forms">
-    <ul class="forms__list">
-      <li class="forms__add-item">
-        <a hreaf="#">Create new</a>
-      </li>
-      <li class="forms__item">
-        Form
-      </li>
-    </ul>
+    <div class="forms__add-item">
+      <a class="forms__add-item-link" href="form/create">+</a>
+    </div>
+    <div class="form__item">
+      <a hreaf="#" class="form__link">Form</a>
+      <input type="button" class="form__delete-button"/>
+      <input type="button" class="form__edin-button" value="edit"/>
+    </div>
+    <div class="form__item">
+      <a hreaf="#">Form</a>
+    </div>
+    <div class="form__item">
+      <a hreaf="#">Form</a>
+    </div>
   </div>
 </main>

@@ -1,3 +1,18 @@
-<p>
-  create-form works!
-</p>
+<header>
+  <div class="create-header">
+    <a href="/home" class="create-header__back">
+      <img src="assets/img/row.png" alt="row" class="create-header__img-btn">
+    </a>
+    <h2 class="create-header__title">Create new form</h2>
+  </div>
+</header>
+<section>
+  <form class="form" [formGroup]="createFormGroup" novalidate (ngSubmit)="createForm()">
+    <input type="text" formControlName="form-title"
+    class="form__title" name="title">
+    <input type="text" name="description"
+      formControlName="description" placeholder="description"
+      class="form__description">
+    <app-create-form-cell></app-create-form-cell>
+  </form>
+</section>
