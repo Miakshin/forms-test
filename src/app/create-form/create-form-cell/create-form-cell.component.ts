@@ -10,6 +10,7 @@ export class CreateFormCellComponent {
 
   type: string;
   title: string;
+  ansverOptions: string[];
 
   constructor() {
     this.type = "string";
