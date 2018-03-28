@@ -42,8 +42,13 @@ export class CreateFormComponent {
     console.log(this.formTemplate)
   }
   onChangeQuestin(event,item,i){
-    console.log(event.target.value,item,i)
     this.formTemplate.questions[item].variables[i] = event.target.value;
+  }
+  onQuestinDelete(item,i){
+    this.formTemplate.questions[item].variables.splice(i,1)
+  }
+  onCellDelete(item){
+    this.formTemplate.questions.splice(item,1)
   }
 
 }

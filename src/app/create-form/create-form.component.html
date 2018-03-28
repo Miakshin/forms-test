@@ -38,6 +38,7 @@
           <li *ngFor="let variable of question.variables;let in = index">
             <input type="text" class="drop-down-items__input" (change)="onChangeQuestin($event,i,in)"
             value={{variable}} name="variable-item">
+            <input *ngIf="question.variables.length > 1" type="button" (click)="onQuestinDelete(i,in)" value="x">
           </li>
         </ul>
         <input *ngIf="question.variables.length < 7" type="button" class="drop-down-items__button-add" value="Another variable"
@@ -45,7 +46,7 @@
       </div>
     </div>
     <div class="form-cell__footer">
-      <input type="button" value="delete" />
+      <input *ngIf="formTemplate.questions.length > 1" type="button" value="delete" (click)="onCellDelete(i)"/>
     </div>
   </div>
   <input type="button" (click)="saveForm()" value="save"/>
