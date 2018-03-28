@@ -1,5 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import {  FormGroup, FormControl, Validators, FormArray }   from '@angular/forms';
+import { Component} from '@angular/core';
+import {  FormGroup }   from '@angular/forms';
 
 import { FormTemplate } from './FormTemplate'
 
@@ -9,7 +9,7 @@ import { FormTemplate } from './FormTemplate'
   styleUrls: ['./create-form.component.css']
 })
 
-export class CreateFormComponent implements OnInit {
+export class CreateFormComponent {
 
   formTemplate: FormTemplate;
 
@@ -27,18 +27,23 @@ export class CreateFormComponent implements OnInit {
     }
   }
 
-  ngOnInit() {
-  }
   addQuestion(){
     const question = {
-     title: "new form",
+     title: "question without title",
      type : "string",
      variables:[""]
    }
    this.formTemplate["questions"].push(question);
   }
+  addDropDownItem(i){
+    this.formTemplate.questions[i].variables.push(" ")
+  }
   saveForm(){
     console.log(this.formTemplate)
+  }
+  onChangeQuestin(event,item,i){
+    console.log(event.target.value,item,i)
+    this.formTemplate.questions[item].variables[i] = event.target.value;
   }
 
 }
