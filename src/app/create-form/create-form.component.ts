@@ -1,6 +1,6 @@
 import { Component} from '@angular/core';
 import {  FormGroup }   from '@angular/forms';
-import { Router} from '@angular/router';
+import { Router } from '@angular/router';
 
 import { FormTemplate } from './FormTemplate';
 import { FormService } from '../form.service';

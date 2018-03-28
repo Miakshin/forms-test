@@ -1,7 +1,7 @@
 <header>
   <div class="create-header">
     <a href="/home" class="create-header__back">
-      <img src="assets/img/row.png" alt="row" class="create-header__img-btn">
+      <mat-icon  class="back-ico">arrow_back</mat-icon>
     </a>
     <h2 class="create-header__title">Create new form</h2>
   </div>
@@ -9,47 +9,56 @@
 <section>
   <form class="form">
     <mat-form-field   class="form__title">
-      <input matInput type="text"  name="title" [(ngModel)]="formTemplate.title">
+      <input matInput type="text"  name="title" [(ngModel)]="formTemplate.title" value="formTemplate.title">
     </mat-form-field>
-  <mat-form-field class="form__description">
-    <input matInput type="text" name="description" [(ngModel)]="formTemplate.description" placeholder="description">
-  </mat-form-field>
-  <div class="form-cell" *ngFor="let question of formTemplate.questions; let i = index">
-    <input type="text" class="form-cell__input-title" value="Question title" name="quextion-title"
-    [(ngModel)]="question.title">
-    <div class="form-cell-settings" >
-      <mat-select  class="form-cell-settings__section" name="quextion-type"
-      [(ngModel)]="question.type" value={{question.type}}>
-        <mat-option value="string" class="form-cell-settings__section">
-          text(string)
-        </mat-option>
-        <mat-option value="oneOfList" class="form-cell-settings__section">
-          one of list
-        </mat-option>
-        <mat-option value="ddl" class="form-cell-settings__section">
-          drop-down list
-        </mat-option>
-      </mat-select>
-    </div>
-    <div class="form-cell-content">
-      <p *ngIf="question.type === 'string'" class="form-cell-content__short-answer">Short answer</p>
-      <div *ngIf="question.type === 'ddl' || question.type === 'oneOfList'" class="drop-down-items">
-        <ul>
-          <li *ngFor="let variable of question.variables;let in = index">
-            <input type="text" class="drop-down-items__input" (change)="onChangeQuestin($event,i,in)"
-            value={{variable}} name="variable-item">
-            <input *ngIf="question.variables.length > 1" type="button" (click)="onQuestinDelete(i,in)" value="x">
-          </li>
-        </ul>
-        <input *ngIf="question.variables.length < 7" type="button" class="drop-down-items__button-add" value="Another variable"
-        (click)="addDropDownItem(i)">
+    <mat-form-field class="form__description">
+      <input matInput type="text" name="description" [(ngModel)]="formTemplate.description"
+       placeholder="description" value="formTemplate.description">
+    </mat-form-field>
+    <div class="form-cell" *ngFor="let question of formTemplate.questions; let i = index">
+      <mat-form-field class="form-cell__input-title">
+        <input matInput type="text"  value="Question title" name="quextion-title"
+          [(ngModel)]="question.title">
+      </mat-form-field>
+      <div class="form-cell-settings" >
+        <mat-select  class="form-cell-settings__section" name="quextion-type"
+        [(ngModel)]="question.type" value={{question.type}}>
+          <mat-option value="string" class="form-cell-settings__item">
+            text(string)
+          </mat-option>
+          <mat-option value="oneOfList" class="form-cell-settings__item">
+            one of list
+          </mat-option>
+          <mat-option value="ddl" class="form-cell-settings__item">
+            drop-down list
+          </mat-option>
+        </mat-select>
+      </div>
+      <div class="form-cell-content">
+        <p *ngIf="question.type === 'string'" class="form-cell-content__short-answer">Short answer</p>
+        <div *ngIf="question.type === 'ddl' || question.type === 'oneOfList'" class="drop-down-items">
+          <ul class="form-cell-content__itteration" [class.oneOfList]="question.type === 'oneOfList'">
+            <li *ngFor="let variable of question.variables;let in = index">
+              <mat-form-field class="drop-down-items__input">
+                <input matInput type="text" (change)="onChangeQuestin($event,i,in)"
+                value={{variable}} name="variable-item">
+              </mat-form-field>
+              <button *ngIf="question.variables.length > 1" class="drop-down-items__btn-close"
+                (click)="onQuestinDelete(i,in)"><mat-icon>clear</mat-icon></button>
+            </li>
+          </ul>
+          <button *ngIf="question.variables.length < 7" class="drop-down-items__button-add" (click)="addDropDownItem(i)">
+            Another variable
+          </button>
+        </div>
+      </div>
+      <div class="form-cell__footer">
+        <button *ngIf="formTemplate.questions.length > 1" (click)="onCellDelete(i)" class="form-cell__footer-delete-button">
+          <mat-icon>delete</mat-icon>
+        </button>
       </div>
     </div>
-    <div class="form-cell__footer">
-      <input *ngIf="formTemplate.questions.length > 1" type="button" value="delete" (click)="onCellDelete(i)"/>
-    </div>
-  </div>
-  <input type="button" (click)="saveForm()" value="save"/>
+  <button mat-raised-button color="primary" class="form__button-save"(click)="saveForm()">save form</button>
   </form>
-  <input  class="button__add-qyestion" type="button" value="+" (click)="addQuestion()"/>
+  <button mat-mini-fab class="button__add-qyestion" (click)="addQuestion()">+</button>
 </section>

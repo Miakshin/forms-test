@@ -2,7 +2,6 @@
   <mat-toolbar color="primary">
     <mat-toolbar-row>
       <h1 class="header__title">Froms generator</h1>
-      <input type="search" name="serch" class="header__search" placeholder="forms search">
     </mat-toolbar-row>
   </mat-toolbar>
 </header>
@@ -13,12 +12,8 @@
       <a class="forms__add-item-link" href="form/create">+</a>
     </div>
     <div *ngFor="let form of forms" class="form__item">
-      <a hreaf="#" class="form__link">Form</a>
+      <a routerLink="/form/{{form.id}}" class="form__link">{{form.title}}</a>
       <input type="button" class="form__delete-button"/>
-      <input type="button" class="form__edin-button" value="edit"/>
-      <p>
-        {{form.title}}
-      </p>
     </div>
   </div>
 </main>

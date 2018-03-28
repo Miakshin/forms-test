@@ -1,0 +1,66 @@
+.header{
+  height: 184px;
+}
+.create-header__back{
+  position: absolute;
+  left: 20px;
+  top: 20px;
+}
+.form{
+  width: 80%;
+  margin: 0 auto;
+  position: relative;
+  bottom: 40px;
+  background-color: white;
+  box-shadow: 0 0 2px rgba(0,0,0,.12), 0 2px 4px rgba(0,0,0,.24);
+  overflow:hidden;
+}
+.form__title{
+  display: block;
+  width: 90%;
+  font-size: 35px;
+  margin: 50px 3% 20px 7%;
+  border-bottom: 1px solid #e0e0e0;
+  padding-bottom: 10px;
+  font-weight: 400;
+}
+.form__description{
+  display: block;
+  width: 90%;
+  font-size: 14px;
+  margin: 30px 3% 50px 7%;
+  border-bottom: 1px solid #e0e0e0;
+  padding-bottom: 5px;
+}
+.back-ico{
+  color: white;
+  font-size: 32px;
+  height: 32px;
+  width: 32px;
+  line-height: 32px;
+}
+.form-cell{
+  width: 90%;
+  margin: 20px 3% 20px 7%;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+.form-cell-settings{
+  width: 50%;
+  display: flex;
+  vertical-align: bottom;
+  text-align: center;
+  color: #a1a1a1;
+}
+.form-cell__title{
+  color: #a1a1a1;
+  font-size: 24px;
+  width: 100%;
+}
+.answer{
+  width: 100%;
+}
+.answer__string{
+  width: 80%;
+}

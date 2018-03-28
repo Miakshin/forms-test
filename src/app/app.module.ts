@@ -7,6 +7,8 @@ import { MatButtonModule } from '@angular/material';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatInputModule } from '@angular/material/input';
 import { MatSelectModule } from '@angular/material/select';
+import { MatRadioModule } from '@angular/material/radio';
+import { MatIconModule } from '@angular/material/icon';
 
 import { AppComponent } from './app.component';
 import { FormComponent } from './form/form.component';
@@ -34,7 +36,9 @@ import { FormService } from './form.service';
     MatButtonModule,
     MatToolbarModule,
     MatInputModule,
-    MatSelectModule
+    MatSelectModule,
+    MatRadioModule,
+    MatIconModule
   ],
   providers: [FormService],
   bootstrap: [AppComponent]

@@ -16,12 +16,12 @@ export class FormService {
 
   constructor() { }
 
-  updateUser(newData){
+  updateUser(newData: FormTemplate[]){
     this.formsSource.next(newData);
   }
 
-  getForms(){
-    return this.formsData;
+  getFormById(id:number){
+    return this.formsData.find(form => form.id === id);
   }
 
   addForm (form: FormTemplate){

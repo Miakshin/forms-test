@@ -1,3 +1,35 @@
-<p>
-  form works!
-</p>
+<header>
+  <mat-toolbar color="primary" class="header">
+    <a href="/home" class="create-header__back">
+      <mat-icon class="back-ico">arrow_back</mat-icon>
+    </a>
+  </mat-toolbar>
+</header>
+<section>
+  <div class="form">
+    <h2 class="form__title">{{form.title}}</h2>
+    <h3 class="form__description">{{form.description}}</h3>
+    <div class="form-cell" *ngFor="let question of form.questions">
+      <h4 class="form-cell__title">{{question.title}}</h4>
+      <div *ngIf="question.type === 'ddl'"class="answer">
+        <mat-select>
+          <mat-option *ngFor="let variable of variables" value="variable">
+            {{variable}}
+          </mat-option>
+        </mat-select>
+      </div>
+      <div *ngIf="question.type === 'oneOfList'" class="answer">
+        <mat-radio-group>
+          <mat-radio-button *ngFor="let variable of variables">
+            {{variable}}
+          </mat-radio-button>
+        </mat-radio-group>
+      </div>
+      <div *ngIf="question.type === 'string'" class="answer">
+        <mat-form-field class="answer__string">
+          <input matInput type="text" name="answer">
+        </mat-form-field>
+      </div>
+    </div>
+  </div>
+<section>
