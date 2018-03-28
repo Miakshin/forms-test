@@ -1,4 +1,5 @@
 export class FormTemplate{
+  id: number;
   title: string;
   description: string;
   questions: [
