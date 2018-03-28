@@ -51,3 +51,10 @@ section{
   top: 50%;
   right: 200px;
 }
+.form-cell-settings{
+  width: 50%;
+}
+.form-cell-settings__section{
+  background-color: #f5f5f5;
+  color:#707070;
+}

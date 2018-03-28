@@ -7,16 +7,44 @@
   </div>
 </header>
 <section>
-  <form class="form" [formGroup]="createFormGroup" novalidate (ngSubmit)="createForm()">
+  <form class="form">
     <mat-form-field   class="form__title">
-      <input matInput type="text" formControlName="form-title" name="title"
-      value="New form">
+      <input matInput type="text"  name="title" [(ngModel)]="formTemplate.title" value="New form">
     </mat-form-field>
   <mat-form-field class="form__description">
-    <input matInput type="text" name="description"
-    formControlName="description" placeholder="description">
+    <input matInput type="text" name="description" [(ngModel)]="formTemplate.description" placeholder="description">
   </mat-form-field>
-    <app-create-form-cell *ngFor="let question of questions"></app-create-form-cell>
+  <div class="form-cell" *ngFor="let question of formTemplate.questions; let i = index">
+    <input type="text" class="form-cell__input-title" value="Question title">
+    <div class="form-cell-settings" >
+      <mat-select  class="form-cell-settings__section" value="question.type">
+        <mat-option value="string" class="form-cell-settings__section">
+          text(string)
+        </mat-option>
+        <mat-option value="paragraph" class="form-cell-settings__section">
+          text(paragraph)
+        </mat-option>
+        <mat-option value="ddl" class="form-cell-settings__section">
+          drop-down list
+        </mat-option>
+      </mat-select>
+    </div>
+    <div class="form-cell-content">
+      <p *ngIf="question.type=== 'string'" class="form-cell-content__short-answer">Short answer</p>
+      <div *ngIf="question.type === 'ddl'" class="drop-down-items">
+        <ul>
+          <!-- <li *ngFor="let var of question.answerVariables">
+            <input type="text" class="drop-down-items__input" [(ngModel)]="var">
+          </li> -->
+        </ul>
+        <input type="button" class="drop-down-items__button-add" value="Another variable" (click)="addDDI($event)">
+      </div>
+    </div>
+    <div class="form-cell__footer">
+      <input type="button" value="delete" />
+    </div>
+  </div>
+  <input type="button" (click)="saveForm()"/>
   </form>
   <input  class="button__add-qyestion" type="button" value="+" (click)="addQuestion()"/>
 </section>

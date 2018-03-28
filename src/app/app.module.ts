@@ -15,7 +15,6 @@ import { AppRoutingModule } from './app-routing.module';
 import { CreateFormComponent } from './create-form/create-form.component';
 import { HomeComponent } from './home/home.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
-import { CreateFormCellComponent } from './create-form/create-form-cell/create-form-cell.component';
 
 
 @NgModule({
@@ -25,7 +24,6 @@ import { CreateFormCellComponent } from './create-form/create-form-cell/create-f
     CreateFormComponent,
     HomeComponent,
     PageNotFoundComponent,
-    CreateFormCellComponent
   ],
   imports: [
     BrowserModule,
