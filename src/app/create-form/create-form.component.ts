@@ -1,9 +1,10 @@
-import { Component} from '@angular/core';
-import {  FormGroup }   from '@angular/forms';
+import { Component, Input} from '@angular/core';
+import {  FormGroup,  NgModel}   from '@angular/forms';
 import { Router } from '@angular/router';
 
 import { FormTemplate } from './FormTemplate';
 import { FormService } from '../form.service';
+
 
 @Component({
   selector: 'app-create-form',
@@ -23,7 +24,7 @@ export class CreateFormComponent {
       description: "",
       questions: [
         {
-        title: "question without title",
+        title: "",
         type: "string",
         variables: [""]
         }
@@ -33,11 +34,12 @@ export class CreateFormComponent {
 
   addQuestion(){
     const question = {
-     title: "question without title",
+     title: "",
      type : "string",
      variables:[""]
    }
    this.formTemplate["questions"].push(question);
+   console.log(this.formTemplate)
   }
 
   addDropDownItem(i){

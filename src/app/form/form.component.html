@@ -12,15 +12,16 @@
     <div class="form-cell" *ngFor="let question of form.questions">
       <h4 class="form-cell__title">{{question.title}}</h4>
       <div *ngIf="question.type === 'ddl'"class="answer">
-        <mat-select>
-          <mat-option *ngFor="let variable of variables" value="variable">
+        <mat-select class="answer__drop-down-list">
+          <mat-option *ngFor="let variable of question.variables" [value]="variable">
             {{variable}}
           </mat-option>
         </mat-select>
       </div>
       <div *ngIf="question.type === 'oneOfList'" class="answer">
-        <mat-radio-group>
-          <mat-radio-button *ngFor="let variable of variables">
+        <mat-radio-group class="answer__radio-group">
+          <mat-radio-button class="answer__radio-item"
+          *ngFor="let variable of question.variables" [value]="variable">
             {{variable}}
           </mat-radio-button>
         </mat-radio-group>

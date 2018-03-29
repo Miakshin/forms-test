@@ -9,19 +9,20 @@
 <section>
   <form class="form">
     <mat-form-field   class="form__title">
-      <input matInput type="text"  name="title" [(ngModel)]="formTemplate.title" value="formTemplate.title">
+      <input matInput type="text"  name="title" [(ngModel)]="formTemplate.title" value="formTemplate.title"
+        required min="3" max="55">
     </mat-form-field>
     <mat-form-field class="form__description">
       <input matInput type="text" name="description" [(ngModel)]="formTemplate.description"
-       placeholder="description" value="formTemplate.description">
+       placeholder="description" value="formTemplate.description" required min="3" max="240">
     </mat-form-field>
     <div class="form-cell" *ngFor="let question of formTemplate.questions; let i = index">
       <mat-form-field class="form-cell__input-title">
-        <input matInput type="text"  value="Question title" name="quextion-title"
-          [(ngModel)]="question.title">
+        <input matInput type="text"  name="quextion-title-{{i}}" placeholder="Enter a question"
+        [(ngModel)]="question.title" required min="3" max="55">
       </mat-form-field>
       <div class="form-cell-settings" >
-        <mat-select  class="form-cell-settings__section" name="quextion-type"
+        <mat-select  class="form-cell-settings__section" name="question-type-{{i}}"
         [(ngModel)]="question.type" value={{question.type}}>
           <mat-option value="string" class="form-cell-settings__item">
             text(string)
@@ -41,7 +42,7 @@
             <li *ngFor="let variable of question.variables;let in = index">
               <mat-form-field class="drop-down-items__input">
                 <input matInput type="text" (change)="onChangeQuestin($event,i,in)"
-                value={{variable}} name="variable-item">
+                value={{variable}} name="variable-item" required min="3" max="55">
               </mat-form-field>
               <button *ngIf="question.variables.length > 1" class="drop-down-items__btn-close"
                 (click)="onQuestinDelete(i,in)"><mat-icon>clear</mat-icon></button>
@@ -58,7 +59,9 @@
         </button>
       </div>
     </div>
-  <button mat-raised-button color="primary" class="form__button-save"(click)="saveForm()">save form</button>
+  <button mat-raised-button color="primary" class="form__button-save"(click)="saveForm()"
+  disabled="formTemplate.title.invalid || formTemplate.description.invalid" 
+  >save form</button>
   </form>
   <button mat-mini-fab class="button__add-qyestion" (click)="addQuestion()">+</button>
 </section>
