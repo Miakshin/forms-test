@@ -2,10 +2,10 @@
 
 To start the application:
 
-> git clone https://github.com/Miakshin/forms-test.git
-> npm install -g @angular/cli    (optional)
-> cd forms-test
-> npm i
+> git clone https://github.com/Miakshin/forms-test.git  
+> npm install -g @angular/cli    (optional)  
+> cd forms-test  
+> npm i  
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
