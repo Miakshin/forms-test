@@ -27,7 +27,7 @@ export class CreateFormComponent implements AfterContentChecked{
         {
         title: "",
         type: "string",
-        variables: [""]
+        variables: ["Question"]
         }
       ]
     }
@@ -37,7 +37,7 @@ export class CreateFormComponent implements AfterContentChecked{
     const question = {
      title: "",
      type : "string",
-     variables:[""]
+     variables:["Question"]
    }
    this.formTemplate["questions"].push(question);
   }
