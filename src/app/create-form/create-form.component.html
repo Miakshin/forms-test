@@ -42,13 +42,13 @@
             <li *ngFor="let variable of question.variables;let in = index">
               <mat-form-field class="drop-down-items__input">
                 <input matInput type="text" (change)="onChangeQuestin($event,i,in)"
-                value={{variable}} name="variable-item" required min="3" max="55">
+                value={{variable}} name="variable-item" required min="2" max="55">
               </mat-form-field>
               <button *ngIf="question.variables.length > 1" class="drop-down-items__btn-close"
                 (click)="onQuestinDelete(i,in)"><mat-icon>clear</mat-icon></button>
             </li>
           </ul>
-          <button *ngIf="question.variables.length < 7" class="drop-down-items__button-add" (click)="addDropDownItem(i)">
+          <button *ngIf="question.variables.length < 8" class="drop-down-items__button-add" (click)="addDropDownItem(i)">
             Another variable
           </button>
         </div>
@@ -60,7 +60,7 @@
       </div>
     </div>
   <button mat-raised-button color="primary" class="form__button-save"(click)="saveForm()"
-  disabled="formTemplate.title.invalid || formTemplate.description.invalid" 
+  [disabled]="isFormInvalid"
   >save form</button>
   </form>
   <button mat-mini-fab class="button__add-qyestion" (click)="addQuestion()">+</button>

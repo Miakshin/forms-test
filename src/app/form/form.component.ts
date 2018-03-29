@@ -15,9 +15,13 @@ export class FormComponent implements OnInit {
   constructor(private formService : FormService,
               private router: ActivatedRoute) { }
 
-  ngOnInit() {
-    this.form = this.formService.getFormById(+ this.router.snapshot.paramMap.get('id'));
-    console.log(this.form)
+  ngOnInit():void {
+    this.getFormData()
+  }
+
+  getFormData():void{
+    let id: number =+ this.router.snapshot.paramMap.get('id');
+    this.form = this.formService.getFormById(id)
   }
 
 }

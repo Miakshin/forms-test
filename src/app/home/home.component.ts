@@ -16,15 +16,14 @@ export class HomeComponent implements OnInit {
 
   constructor(private formService : FormService) { }
 
-  ngOnInit() {
+  ngOnInit():void {
     this.formService.forms
       .subscribe(forms => {
         this.forms = forms;
-        console.log(this.forms);
       })
   }
 
-  ngOnDestroy(){
+  ngOnDestroy():void{
     this.ngUnsubscribe.next();
     this.ngUnsubscribe.complete();
   }

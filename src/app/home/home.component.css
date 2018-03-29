@@ -29,8 +29,6 @@
   margin: 2%;
   border: 4px solid #ffffff00;
 }
-.forms__add-item{
-}
 .forms__add-item:hover{
   border: 4px solid #673ab7;
 }
