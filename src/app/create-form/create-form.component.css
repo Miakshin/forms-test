@@ -138,3 +138,17 @@ section{
 .form__button-save{
   margin: 0 0 20px 7%;
 }
+@media (max-width: 576px) {
+  .drop-down-items__input{
+    width: 87%;
+  }
+  .form-cell-settings{
+    width: 90%;
+  }
+  .form-cell__input-title{
+    width: 90%;
+  }
+  .form-cell-content__itteration{
+    margin-left: 5%;
+  }
+}
